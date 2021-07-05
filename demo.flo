@@ -1,0 +1,20 @@
+def not_zero(x) "Returns 1 if value is 0 and 0 otherwise"
+    $ result = 0
+    $ if x then
+    $   result = 0
+    $ else
+    $   result = 1
+    ! result
+
+def incr(x) "Increment the argument by one" ! x + 1
+
+def fib(n) "Calculate the fibonacci numbers recursively"
+  $ result = 0
+  $ if n <= 1 then
+    $ result = n
+  $ else
+    $ result = fib(n - 1) + fib(n - 2)
+  ! result
+  
+operator plus(x, y)
+    ! x + y

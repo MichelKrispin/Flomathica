@@ -1,0 +1,39 @@
+PDefinitions. Program ::= [Def] ;
+
+terminator Def "" ;
+DFunction.    Def     ::= "def" Id "(" [Id] ")" Com [Stm] "!" Exp ;
+DOperator.    Def     ::= "operator" Id "(" Id "," Id ")" Com [Stm] "!" Exp ;
+DHelp.        Def     ::= "?" String ; -- ? "+" outputs help of plus
+DExpression.  Def     ::= Exp;
+
+CComment.     Com     ::= String ;
+CEmpty.       Com     ::= ;
+
+terminator Stm "" ;
+SExpression.  Stm     ::= "$" Exp ;
+SInit.        Stm     ::= "$" Id "=" Exp ;
+SIfElse.      Stm     ::= "$" "if" Exp "then" Stm "$" "else" Stm ;
+
+separator Exp "," ;
+EDouble.      Exp15   ::= Double ;
+EInteger.     Exp15   ::= Integer ;
+EId.          Exp15   ::= Id ;
+ECall.        Exp14   ::= Id "(" [Exp] ")" ;
+EUMinus.      Exp13   ::= "-" Exp13 ;
+ETimes.       Exp12   ::= Exp12 "*"   Exp13 ;
+EDiv.         Exp12   ::= Exp12 "/"   Exp13 ;
+EPlus.        Exp11   ::= Exp11 "+"   Exp12 ;
+EMinus.       Exp11   ::= Exp11 "-"   Exp12 ;
+ELt.          Exp9    ::= Exp9  "<"   Exp10 ;
+EGt.          Exp9    ::= Exp9  ">"   Exp10 ;
+ELtEq.        Exp9    ::= Exp9  "<="  Exp10 ;
+EGtEq.        Exp9    ::= Exp9  ">="  Exp10 ;
+EEq.          Exp8    ::= Exp8  "=="  Exp9 ;
+ENEq.         Exp8    ::= Exp8  "!="  Exp9 ;
+EPercentage.  Exp7    ::= Exp7 "%" Exp8 ;
+EOperator.    Exp3    ::= Exp3 Id Exp4;
+coercions Exp 15 ;
+
+separator Id "," ;
+token Id (letter (letter | digit | '_')*) ;
+

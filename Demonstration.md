@@ -1,9 +1,14 @@
 ```
 > ./Flomathica
-==================================
-==========> Flomathica <==========
-==================================
-Type 'exit()' to exit, '_toggle_ir()' to toggle LLVM IR and '? ""' for help
+====================================
+===========> Flomathica <===========
+====================================
+-------Predefined functions---------
+  exit()         to exit
+  _toggle_ir()   to toggle LLVM IR
+  _broom()       to clear the screen
+  ? ""           to view the help
+------------------------------------
 >>> def incr(x) "Increment the argument by one" ! x + 1
 >>> operator plus(x, y) "Simple addition"
 ...   $ result = x + y

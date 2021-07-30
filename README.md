@@ -85,8 +85,6 @@ In the `demo.flo` file are some predefined functions to show how functions and o
 Simple addition
 >>> ? "incr"
 Increment the argument by one
->>> ? "werbung"
-Hier koennte ihre Werbung stehen
 >>> exit()
 > ./Flomathica demo.flo
 >>> ? ""

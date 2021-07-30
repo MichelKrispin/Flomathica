@@ -4,7 +4,7 @@ A student project to implement a very small custom interpreter language. This pr
 ## Build
 The project depends upon [llvm-12](https://releases.llvm.org/download.html#12.0.0) and `llvm-config`. Some earlier version of LLVM might work but were not tested. The same applies for Windows and Mac OS.
 
-If everything is installed there has to be a `./build` directory. If it exists then running should build the interpreter.
+If everything is installed a `./build` directory is needed. Creating it and running a Makefile builds the interpreter.
 ```shell
 mkdir build
 make
@@ -24,12 +24,10 @@ It is possible to write functions or operators beforehand in a file and load the
 
 The help command `? ""` lists all existent functions and their help. If no help string was provided it just shows the names of the expected arguments.
 
-If a new operator or function is defined then the interpreter will look for the `!` as every function/operator has to have exactly one.
-
 
 ## Language
 
-The language itself is rather simple. Everything is of type double and every function has one return value. Variables can't be defined so a constant value can only be defined using a constant function.
+The language itself is rather simple. Everything is of type double and every function has one return value (marked with a `!`). Variables can't be defined so a constant value can only be defined using a constant function.
 Operators are just functions which take in two arguments. Every statement inside a function starts with a `$` and loops have to be implemented recursively.
 
 A simple constant function looks like

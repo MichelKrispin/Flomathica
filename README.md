@@ -48,7 +48,7 @@ For more detailed information have a look at the `demo.flo` and `Demonstration.m
 
 
 ## Demonstration 
-There is a `Demonstration.md` file where a step by step recipe for the features can be found.
+There is a `Demonstration.md` file where a step by step recipe shows some features.
 
 In the `demo.flo` file are some predefined functions to show how functions and operators can be defined.
 
